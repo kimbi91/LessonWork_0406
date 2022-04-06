@@ -78,15 +78,16 @@ public class Task {
      *              ezúttal a 2-t találja meg előbb, ezért ez a megoldás
      */
     public static int findMostFrequentElem(int[] array) {
-        int[] frequencyCounter = new int[array.length];
+        int[] arrayClone = array.clone();
+        int counter = 0;
 
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
+        for (int i = 0; i < arrayClone.length; i++) {
+            for (int j = 0; j < arrayClone.length; j++) {
                 if (j == i) {
                     continue;
                 }
                 if (array[i] == array[j]) {
-                    frequencyCounter[i]++;
+
                 }
             }
         }
