@@ -44,17 +44,42 @@ class WithoutTestTest {
 
     @Test
     void test_checkGender() {
-        // write your test cases here
+        String woman = WithoutTest.checkGender(0);
+        assertEquals("nő", woman);
+
+        String man = WithoutTest.checkGender(1);
+        assertEquals("férfi", man);
+
+        String other = WithoutTest.checkGender(5);
+        assertEquals("valami más", other);
     }
 
     @Test
     void test_trafficLight() {
-        // write your test cases here
+        String green = WithoutTest.trafficLight("zöld");
+        assertEquals("SZABAD", green);
+
+        String yellow = WithoutTest.trafficLight("sárga");
+        assertEquals("LASSÍTS", yellow);
+
+        String red = WithoutTest.trafficLight("piros");
+        assertEquals("MEGÁLLJ", red);
+
+        String other = WithoutTest.trafficLight("lila");
+        assertEquals("NEM TUDOM", other);
     }
 
     @Test
     void test_isLeapYear() {
-        // write your test cases here
+        assertTrue(WithoutTest.isLeapYear(1904));
+        assertTrue(WithoutTest.isLeapYear(1940));
+        assertTrue(WithoutTest.isLeapYear(2000));
+        assertTrue(WithoutTest.isLeapYear(2048));
+
+        assertFalse(WithoutTest.isLeapYear(1905));
+        assertFalse(WithoutTest.isLeapYear(1941));
+        assertFalse(WithoutTest.isLeapYear(2001));
+        assertFalse(WithoutTest.isLeapYear(2050));
     }
 
 }
