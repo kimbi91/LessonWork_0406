@@ -78,6 +78,21 @@ public class Task {
      *              ezúttal a 2-t találja meg előbb, ezért ez a megoldás
      */
     public static int findMostFrequentElem(int[] array) {
+        int[] frequencyCounter = new int[array.length];
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                if (j == i) {
+                    continue;
+                }
+                if (array[i] == array[j]) {
+                    frequencyCounter[i]++;
+                }
+            }
+        }
+
+
+
         return -1;
     }
 
@@ -97,7 +112,27 @@ public class Task {
      * Az összes többi elem párosával szerepel benne (2-szer, 4-szer, 6-szor stb.)
      */
     public static int findLonelyElem(int[] array) {
-        return -1;
+        int[] frequencyCounter = new int[array.length];
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                if (array[i] == array[j]) {
+                    frequencyCounter[i]++;
+                }
+            }
+        }
+
+        for (int i = 0; i < frequencyCounter.length; i++) {
+            if (frequencyCounter[i] == 1) {
+                return array[i];
+            }
+        }
+
+        if (array.length == 1) {
+            return array[0];
+        } else {
+            return -1;
+        }
     }
 
 }
