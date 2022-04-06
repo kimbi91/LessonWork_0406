@@ -37,7 +37,17 @@ public class Task {
         tipp:
         char oneLetter = text.charAt(0);    // a szöveg legelső, azaz 0. indexén lévő karaktere
          */
-        return -1;
+
+        int counter = 0;
+
+        for (int i = 0; i < text.length(); i++) {
+            char oneLetter = text.charAt(i);
+
+            if (oneLetter == letter) {
+                counter++;
+            }
+        }
+        return counter;
     }
 
     /**
